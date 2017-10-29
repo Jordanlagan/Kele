@@ -1,7 +1,9 @@
-require 'httparty'
-require 'json'
+require "roadmap.rb"
+require "httparty"
+require "json"
 
 class Kele
+  include Roadmap
   include HTTParty
 
   def initialize(email, password)
@@ -23,9 +25,8 @@ class Kele
     JSON.parse(response.body)
   end
 
-  def get_mentor_availability
-    mentor_id = get_me["current_enrollment"]["mentor_id"]
-    response = self.class.get(@base_api+"mentors/"+mentor_id.to_s+"/student_availability", headers: { "authorization" => @authentication_token })
-    JSON.parse(response.body)
+  def get_mentor_availability(mentor_id)
+    response = self.class.get(@base_api+"/mentors/#{mentor_id}/student_availability", headers: {"authorization" => @authentication_token })
+    @mentor_availability = JSON.parse(response.body)
   end
 end
