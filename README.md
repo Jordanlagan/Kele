@@ -29,18 +29,18 @@ Kele can use the Bloc API to do a variety of things.
  - `user.get_mentor_availability(mentor_id)`
 
 #### Checking Roadmaps and Checkpoints
-```roadmap_id = 123
+`roadmap_id = 123
 checkpoint_id = 123
 user.get_roadmap(roadmap_id)
-user.get_checkpoint(checkpoint_id)```
+user.get_checkpoint(checkpoint_id)`
 
 #### Retrieving and sending messages
-````user.get_messages(page)
-user.create_message(sender_email, recipient_id, message_body, subject)```
+`user.get_messages(page)
+user.create_message(sender_email, recipient_id, message_body, subject)`
 
 #### Submitting and updating Checkpoints
-```user.create_submission(checkpoint_id, assignment_branch, assignment_commit_link, comment, enrollment_id)
-user.update_submission(id, assignment_branch, assignment_commit_link, checkpoint_id, comment, enrollment_id)```
+`user.create_submission(checkpoint_id, assignment_branch, assignment_commit_link, comment, enrollment_id)
+user.update_submission(id, assignment_branch, assignment_commit_link, checkpoint_id, comment, enrollment_id)`
 
 ### License
 
