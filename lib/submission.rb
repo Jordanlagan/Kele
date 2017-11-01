@@ -5,6 +5,6 @@ module Submission
       assignment_commit_link: assignment_commit_link, comment: comment,
       enrollment_id: enrollment_id }, headers: { authorization: @authentication_token }
     )
-    @submission = JSON.parse(response.body)
+    puts "submission sent" if response.success?
   end
 end
