@@ -1,11 +1,13 @@
 require "./lib/roadmap"
 require "./lib/message"
+require "./lib/submission"
 require "httparty"
 require "json"
 
 class Kele
   include Roadmap
   include Message
+  include Submission
   include HTTParty
 
   def initialize(email, password)
